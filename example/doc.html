@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>A RMScreenprint</title>
+</head>
+<body>
+  <h1>Main heading in my document</h1>
+  <!-- Note that it is "h" + "1", not "h" + the letters "one" -->
+  <p>Look Ma, I am coding <abbr title="Hyper Text Markup Language">HTML</abbr>.</p>
+</body>
+</html>
