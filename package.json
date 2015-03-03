@@ -1,6 +1,6 @@
 {
   "name": "brfs-htmlmin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "browserify fs.readFileSync() static html file inliner with html minifier",
   "main": "index.js",
   "repository": {
