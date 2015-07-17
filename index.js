@@ -5,6 +5,13 @@ var fs = require('fs');
 var path = require('path');
 var minify = require('html-minifier').minify;
 
+var regexps = [
+    'ignoreCustomComments',
+    'customAttrAssign',
+    'customAttrSurround',
+    'customAttrCollapse'
+];
+
 module.exports = function(file, opts) {
     if(/\.json$/.test(file)) return through();
 
@@ -17,6 +24,15 @@ module.exports = function(file, opts) {
         removeRedundantAttributes: true,
         removeEmptyAttributes: true
     };
+
+    Object.keys(opts.minify).forEach(function (key) {
+        if(~regexps.indexOf(key)) {
+          var value = opts.minify[key];
+            opts.minify[key] = Array.isArray(value) ?
+                value.map(asRegExp) :
+                asRegExp(value);
+        }
+    });
 
     var vars = {
         __filename: file,
@@ -61,5 +77,9 @@ module.exports = function(file, opts) {
             sm.emit('file', file);
             next();
         }
+    }
+
+    function asRegExp(val) {
+        return (val instanceof RegExp) ? val : new RegExp(val);
     }
 };
