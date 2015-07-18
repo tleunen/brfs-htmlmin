@@ -26,7 +26,7 @@
   "author": "Tommy Leunen <tommy.leunen@gmail.com> (http://tommyleunen.com/)",
   "license": "MIT",
   "dependencies": {
-    "html-minifier": "^0.6.8",
+    "html-minifier": "^0.7.2",
     "quote-stream": "0.0.0",
     "static-module": "^1.0.0",
     "through2": "^0.6.2"
